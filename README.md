@@ -4,7 +4,9 @@
 # Question 3.2 R.1
 
 # Function remind me: 
+The `remind_me` function returns a reminder message about buying groceries.
 
+```R
 remind_me <- function(){
   reminder <- "Remember to buy groceries: Eggs, Milk, Chicken, Bannas"
   return(reminder)
