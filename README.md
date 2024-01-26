@@ -1,9 +1,9 @@
-# Assignment 3.2 R - Schira von Oppen (12665991)
+# Assignment 3.2 R 
 
 
-# Question 3.2 R.1
+## Question 3.2 R.1
 
-# Function remind me: 
+### Function remind me: 
 The `remind_me` function returns a reminder message about buying groceries.
 
 ```R
@@ -13,9 +13,13 @@ remind_me <- function(){
 }
 
 remind_me()
+```
 
-# Function cheat:
 
+### Function cheat:
+The `cheat` function shows you the results for certain programming exercises that you want to cheat on. 
+
+```
 cheat <- function(exercise){
   if(exercise == "exercise 1"){
     result <- "grades <- grade(n = 64, mean = 6, sd = 2, name = grade, digits = 2),
@@ -49,14 +53,13 @@ cheat <- function(exercise){
 }
 
 
-cheat("exercise 2")
+cheat("exercise x")
+```
 
-# Link:
-# https://github.com/schira00/Assignment-3.2-R/blob/main/Assignment%203.2.R.R
+## Question 3.2 R.2
+The `make_art` function allows R to make art without using the aRtsy package. 
 
-
-# Question 3.2 R.2
-
+```
 install.packages("DescTools")
 library(DescTools)
 
@@ -64,20 +67,21 @@ install.packages("plotrix")
 library("plotrix")
 
 
-make_art <- function(seed = NULL){
-  plot(1, type = "n", xlab = "", ylab = "", xlim = c(0, 10), ylim = c(0, 10))
+make_art <- function(x){
+set.seed(x)
+  plot(1, type = "n", xlab = "", ylab = "", xlim = c(0, 15), ylim = c(0, 15))
   
   for(i in 1:20){
     radius <- runif(1, 0.3, 1.5)
-    a <- runif(1, 0, 9)
-    b <- runif(1, 0, 9)
+    a <- runif(1, 0, 11)
+    b <- runif(1, 0, 11)
     color <- rgb(runif(1), runif(1), runif(1))
     symbols(a, b, circles = radius, inches = 0.1, add = TRUE, bg = color, fg = NULL)
   }
   
   for(i in 1:10){
-    a1 <- runif(1, 0, 7)
-    a2 <- runif(1, 0, 7)
+    a1 <- runif(1, 0, 12)
+    a2 <- runif(1, 0, 12)
     b1 <- runif(1, 0, 10)
     b2 <- runif(1, 0, 10)
     col <- rgb(runif(1), runif(1), runif(1))
@@ -97,4 +101,5 @@ make_art <- function(seed = NULL){
   
 }
 
-make_art(seed = 123)
+make_art(x)
+```
